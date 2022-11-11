@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-restricted-syntax */
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../src/get-random.js';
 
@@ -16,21 +17,20 @@ const riddleNumbers = [
   getRandomNumber(1, 100),
 ];
 
-const isEven = (number) => {
-  return number % 2 === 0 ? 'yes' : 'no';
-};
-
-console.log(riddleNumbers); // delete it
+const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
 for (const number of riddleNumbers) {
   console.log(`Question: ${number}`);
-  const answer = readlineSync.question('Your answer: ');
-  if (isEven(number) === answer) {
+  const correctAnswer = isEven(number);
+  const userAnswer = readlineSync.question('Your answer: ');
+  if (userAnswer === correctAnswer) {
     console.log('Correct!');
   } else {
-    console.log('Wrong!');
+    console.log(
+      `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}.`
+    );
     break;
   }
 }
 
-console.log(`Congratulations ${name}!`);
+console.log(`Congratulations, ${name}!`);
