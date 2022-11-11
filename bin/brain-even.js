@@ -1,13 +1,12 @@
 #!/usr/bin/env node
-/* eslint-disable no-restricted-syntax */
 import readlineSync from 'readline-sync';
 import getRandomNumber from '../src/get-random.js';
 
 console.log('Welcome to the brain games!');
 
-const name = readlineSync.question('May I have your name?: ');
+const userName = readlineSync.question('May I have your name?: ');
 
-console.log(`Hello, ${name}!`);
+console.log(`Hello, ${userName}!`);
 
 console.log('Answer "yes" if the number is even, otherwise answer "no"');
 
@@ -22,12 +21,11 @@ const startBrainEvenGame = () => {
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
       if (i === 2) {
-        console.log(`Congratulations, ${name}!`);
+        console.log(`Congratulations, ${userName}!`);
       }
     } else {
       console.log(
-        // eslint-disable-next-line comma-dangle
-        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}.\n Let's try again, ${name}!`
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`,
       );
       break;
     }
