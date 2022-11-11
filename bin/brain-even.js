@@ -11,26 +11,27 @@ console.log(`Hello, ${name}!`);
 
 console.log('Answer "yes" if the number is even, otherwise answer "no"');
 
-const riddleNumbers = [
-  getRandomNumber(1, 100),
-  getRandomNumber(1, 100),
-  getRandomNumber(1, 100),
-];
-
 const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
-for (const number of riddleNumbers) {
-  console.log(`Question: ${number}`);
-  const correctAnswer = isEven(number);
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (userAnswer === correctAnswer) {
-    console.log('Correct!');
-  } else {
-    console.log(
-      `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}.`
-    );
-    break;
+const startBrainEvenGame = () => {
+  for (let i = 0; i < 3; i += 1) {
+    const randomNumber = getRandomNumber(1, 100);
+    const correctAnswer = isEven(randomNumber);
+    console.log(`Question: ${randomNumber}`);
+    const userAnswer = readlineSync.question('Your answer: ');
+    if (userAnswer === correctAnswer) {
+      console.log('Correct!');
+      if (i === 2) {
+        console.log(`Congratulations, ${name}!`);
+      }
+    } else {
+      console.log(
+        // eslint-disable-next-line comma-dangle
+        `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}.\n Let's try again, ${name}!`
+      );
+      break;
+    }
   }
-}
+};
 
-console.log(`Congratulations, ${name}!`);
+startBrainEvenGame();
