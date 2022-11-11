@@ -5,7 +5,7 @@ Hello, Username! Welcome to the Brain Games!
 
 Description:
 
-"Mind Games" is a set of five console games based on popular popular mobile apps for brain training. Each game asks questions that need to be answered. After three correct answers, the game is considered to be completed. Incorrect results end the game and return it again.
+"Brain Games" is a set of five console games based on popular popular mobile apps for brain training. Each game asks questions that need to be answered. After three correct answers, the game is considered to be completed. Incorrect results end the game and return it again.
 
 Minimum requirements:
 
