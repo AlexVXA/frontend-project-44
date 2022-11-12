@@ -19,4 +19,4 @@ Brain-even:
 
 A game in which you have to determine the parity of three random numbers.
 
-<script id="asciicast-q44CeIYUDxaQIGsKz44WhYkjB" src="https://asciinema.org/a/q44CeIYUDxaQIGsKz44WhYkjB.js" async></script>
+[![asciicast](https://asciinema.org/a/q44CeIYUDxaQIGsKz44WhYkjB.svg)](https://asciinema.org/a/q44CeIYUDxaQIGsKz44WhYkjB)
