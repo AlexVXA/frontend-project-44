@@ -14,3 +14,9 @@ If you have a brain, you good to go!
 Installing instructions:
 
 Just clone this baby to your machine using 'git clone <ssh/url>'. Open a 'frontend-project-44' directory, then throw 'make install' and 'npm link' in your console. Congratulations! Now you are ready to get brained.
+
+Brain-even:
+
+A game in which you have to determine the parity of three random numbers.
+
+<script id="asciicast-q44CeIYUDxaQIGsKz44WhYkjB" src="https://asciinema.org/a/q44CeIYUDxaQIGsKz44WhYkjB.js" async></script>
