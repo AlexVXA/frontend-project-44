@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import getRandomNumber from '../src/get-random.js';
+import getRandomNumber from '../src/helpers/get-random.js';
 
 console.log('Welcome to the brain games!');
 
