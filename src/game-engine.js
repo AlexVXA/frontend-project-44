@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 const startGame = (question, correctAnswer, userName) => {
   for (let i = 0; i < 3; i += 1) {
-    console.log(question);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
