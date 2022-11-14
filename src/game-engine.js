@@ -1,12 +1,8 @@
 import readlineSync from 'readline-sync';
-import getRandomNumber from './helpers/get-random.js';
-import isEven from './helpers/is-even.js';
 
-const startGame = () => {
+const startGame = (question, correctAnswer, userName) => {
   for (let i = 0; i < 3; i += 1) {
-    const randomNumber = getRandomNumber(1, 100);
-    const correctAnswer = isEven(randomNumber);
-    console.log(`Question: ${randomNumber}`);
+    console.log(question);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
