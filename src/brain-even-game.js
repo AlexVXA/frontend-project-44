@@ -20,4 +20,4 @@ const questionsAndAnswers = getQuestionsAndAnswers();
 
 const challenge = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-startGame(questionsAndAnswers, challenge);
+export default startGame(questionsAndAnswers, challenge);
