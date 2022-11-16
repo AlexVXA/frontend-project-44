@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import greetingsByName from '../src/cli.js';
+import getUsernameAndSayHello from '../src/cli.js';
 
-greetingsByName();
+getUsernameAndSayHello();
