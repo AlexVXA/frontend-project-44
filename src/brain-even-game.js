@@ -1,6 +1,5 @@
 import getRandomNumber from './helpers/get-random.js';
 import isEven from './helpers/is-even.js';
-import startGame from './game-engine.js';
 
 const roundCount = 3;
 const getQuestionsAndAnswers = () => {
@@ -20,4 +19,4 @@ const questionsAndAnswers = getQuestionsAndAnswers();
 
 const challenge = 'Answer "yes" if the number is even, otherwise answer "no"';
 
-export default startGame(questionsAndAnswers, challenge);
+export { questionsAndAnswers, challenge };
