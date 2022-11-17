@@ -2,10 +2,10 @@ import getRandomNumber from './helpers/get-random.js';
 
 const operators = ['-', '+', '*'];
 
-const getRandomOperator = (operators) => {
+const getRandomOperator = (arr) => {
   const initialIndex = 0;
-  const lastIndex = operators.length - 1;
-  return operators[getRandomNumber(initialIndex, lastIndex)];
+  const lastIndex = arr.length - 1;
+  return arr[getRandomNumber(initialIndex, lastIndex)];
 };
 
 const getRandomExpression = () => {
@@ -18,8 +18,23 @@ const getRandomExpression = () => {
   return randomExpression.toString();
 };
 
-const getQuestionsAndAnswers = 
+const roundCount = 3;
 
-const question = getRandomExpression();
+const getQuestionsAndAnswers = () => {
+  let i = 0;
+  const result = [];
 
-const correctAnswer = eval(question);
+  while (i < roundCount) {
+    const question = getRandomExpression();
+    const correctAnswer = eval(question).toString();
+    result[i] = [question, correctAnswer];
+    i += 1;
+  }
+  return result;
+};
+
+const questionsAndAnswers = getQuestionsAndAnswers();
+
+const challenge = 'What is the result of the expression?';
+
+export { questionsAndAnswers, challenge };
