@@ -20,3 +20,9 @@ Brain-even:
 A game in which you have to determine the parity of three random numbers.
 
 [![asciicast](https://asciinema.org/a/q44CeIYUDxaQIGsKz44WhYkjB.svg)](https://asciinema.org/a/q44CeIYUDxaQIGsKz44WhYkjB)
+
+Brain-calc:
+
+A game in which you have to solve a simple (or not so) math problems. Problems includes addition, substraction and multiplication. Numbers and operands are chosen randomly.
+
+[![asciicast](https://asciinema.org/a/RCuE8NKmWF8fi7SfKIpX2cuvU.svg)](https://asciinema.org/a/RCuE8NKmWF8fi7SfKIpX2cuvU)
