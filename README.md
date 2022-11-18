@@ -26,3 +26,7 @@ Brain-calc:
 A game in which you have to solve a simple (or not so) math problems. Problems includes addition, substraction and multiplication. Numbers and operands are chosen randomly.
 
 [![asciicast](https://asciinema.org/a/RCuE8NKmWF8fi7SfKIpX2cuvU.svg)](https://asciinema.org/a/RCuE8NKmWF8fi7SfKIpX2cuvU)
+
+Brain-GCD:
+
+Find the greatest common divisor of two given numbers.
