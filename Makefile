@@ -12,7 +12,7 @@ brain-calc:
 
 brain-gcd:
 	node bin/brain-gcd.js
-
+	
 test:
 	npm test
 
