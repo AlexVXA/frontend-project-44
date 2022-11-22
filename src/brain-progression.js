@@ -1,54 +1,68 @@
 import getRandomNumber from './helpers/get-random.js';
 
 const getProgression = () => {
-  const progLength = getRandomNumber(5, 10);
+  const progLength = getRandomNumber(5, 9);
   const progStep = getRandomNumber(2, 5);
-  const hiddenValueIndex = getRandomNumber(1, progLength);
-  console.log(`hvi: ${hiddenValueIndex}   pl: ${progLength}`);
-  const initialNumber = getRandomNumber(1, 100);
-  let result = initialNumber;
-  let currentValue = result;
+  let currentValue = getRandomNumber(1, 100);
+  const result = [currentValue];
   let i = 1;
 
   while (i <= progLength) {
-    if (i === hiddenValueIndex) {
-      currentValue += progStep;
-      result += ' ..';
-      i += 1;
-    }
     currentValue += progStep;
-    result += ` ${currentValue}`;
+    result[i] = currentValue;
     i += 1;
   }
   return result;
 };
 
-const a = getProgression();
-console.log(a);
+const getIncompleteProgression = () => {
+  const progression = getProgression();
+  const progLength = progression.length - 1;
+  const hiddenValue = '..';
+  const hiddenValueIndex = getRandomNumber(0, progLength);
+  progression[hiddenValueIndex] = hiddenValue;
+
+  return progression.join(' ');
+};
 
 const getHiddenValue = (progression) => {
   const progArray = progression.split(' ');
   const hiddenValueIndex = progArray.indexOf('..');
-  let result = 0;
   if (hiddenValueIndex === 0) {
-    const postHidden = progArray[hiddenValueIndex + 1];
-    const subsequent = progArray[hiddenValueIndex + 2];
+    const postHidden = Number(progArray[1]);
+    const subsequent = Number(progArray[2]);
     const progStep = subsequent - postHidden;
-    result = postHidden - progStep;
+    return postHidden - progStep;
   }
   if (hiddenValueIndex === progArray.length - 1) {
-    const preHidden = progArray[hiddenValueIndex - 1];
-    const antecedent = progArray[hiddenValueIndex - 2];
+    const preHidden = Number(progArray[hiddenValueIndex - 1]);
+    const antecedent = Number(progArray[hiddenValueIndex - 2]);
     const progStep = preHidden - antecedent;
-    result = preHidden + progStep;
-  } else {
-    const preHidden = progArray[hiddenValueIndex - 1];
-    const postHidden = progArray[hiddenValueIndex + 1];
-    const progStep = (postHidden - preHidden) / 2;
-    console.log(`s: ${progStep}`);
-    result = postHidden - progStep;
+    return preHidden + progStep;
   }
-  return result.toString();
+  const preHidden = Number(progArray[hiddenValueIndex - 1]);
+  const postHidden = Number(progArray[hiddenValueIndex + 1]);
+  const progStep = (postHidden - preHidden) / 2;
+  return postHidden - progStep;
 };
 
-console.log(getHiddenValue(a));
+const roundCount = 3;
+
+const getQuestionsAndAnswers = () => {
+  let i = 0;
+  const result = [];
+
+  while (i < roundCount) {
+    const question = getIncompleteProgression();
+    const correctAnswer = getHiddenValue(question).toString();
+    result[i] = [question, correctAnswer];
+    i += 1;
+  }
+  return result;
+};
+
+const questionsAndAnswers = getQuestionsAndAnswers();
+
+const challenge = 'What number is missing in the progression?';
+
+export { questionsAndAnswers, challenge };
