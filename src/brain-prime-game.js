@@ -29,7 +29,6 @@ const getQuestionsAndAnswers = () => {
 
 const questionsAndAnswers = getQuestionsAndAnswers();
 
-const challenge =
-  'Answer "yes" if given number is prime. Otherwise answer "no".';
+const challenge = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 export { questionsAndAnswers, challenge };
