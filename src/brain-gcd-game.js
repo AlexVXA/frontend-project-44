@@ -1,8 +1,8 @@
 import getRandomNumber from './helpers/get-random.js';
 
 const getGCDpair = () => {
-  const firstValue = getRandomNumber(1, 100);
-  const secondValue = getRandomNumber(1, 100);
+  const firstValue = getRandomNumber(0, 100);
+  const secondValue = getRandomNumber(0, 100);
 
   return `${firstValue} ${secondValue}`;
 };
