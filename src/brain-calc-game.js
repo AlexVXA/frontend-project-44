@@ -1,4 +1,5 @@
 import getRandomNumber from './helpers/get-random.js';
+import getCalc from './helpers/get-calc.js';
 
 const operators = ['-', '+', '*'];
 
@@ -26,7 +27,7 @@ const getQuestionsAndAnswers = () => {
 
   while (i < roundCount) {
     const question = getRandomExpression();
-    const correctAnswer = eval(question).toString();
+    const correctAnswer = getCalc(question).toString();
     result[i] = [question, correctAnswer];
     i += 1;
   }
