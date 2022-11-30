@@ -1,15 +1,10 @@
 import getRandomNumber from './helpers/get-random.js';
 
 const isPrime = (num) => {
-  if (num > 1) {
-    for (let i = 2; i < num; i += 1) {
-      if (num % i === 0) {
-        return 'no';
-      }
-    }
-    return 'yes';
+  for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
+    if (num % i === 0) return 'no';
   }
-  return 'no';
+  return num > 1 ? 'yes' : 'no';
 };
 
 const roundCount = 3;
