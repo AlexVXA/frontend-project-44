@@ -1,4 +1,5 @@
 import getRandomNumber from './helpers/get-random.js';
+import startGame from './game-engine.js';
 
 const getProgression = () => {
   const progLength = getRandomNumber(5, 9);
@@ -26,43 +27,32 @@ const getIncompleteProgression = () => {
 };
 
 const getHiddenValue = (progression) => {
-  const progArray = progression.split(' ');
-  const hiddenValueIndex = progArray.indexOf('..');
+  const arr = progression.split(' ');
+  const hiddenValueIndex = arr.indexOf('..');
   if (hiddenValueIndex === 0) {
-    const postHidden = Number(progArray[1]);
-    const subsequent = Number(progArray[2]);
-    const progStep = subsequent - postHidden;
-    return postHidden - progStep;
+    const x = Number(arr[1]);
+    const y = Number(arr[2]);
+    const progStep = y - x;
+    return x - progStep;
   }
-  if (hiddenValueIndex === progArray.length - 1) {
-    const preHidden = Number(progArray[hiddenValueIndex - 1]);
-    const antecedent = Number(progArray[hiddenValueIndex - 2]);
-    const progStep = preHidden - antecedent;
-    return preHidden + progStep;
+  if (hiddenValueIndex === arr.length - 1) {
+    const x = Number(arr[hiddenValueIndex - 1]);
+    const y = Number(arr[hiddenValueIndex - 2]);
+    const progStep = x - y;
+    return x + progStep;
   }
-  const preHidden = Number(progArray[hiddenValueIndex - 1]);
-  const postHidden = Number(progArray[hiddenValueIndex + 1]);
-  const progStep = (postHidden - preHidden) / 2;
-  return postHidden - progStep;
+  const x = Number(arr[hiddenValueIndex - 1]);
+  const y = Number(arr[hiddenValueIndex + 1]);
+  const progStep = (y - x) / 2;
+  return y - progStep;
 };
 
-const roundCount = 3;
-
-const getQuestionsAndAnswers = () => {
-  let i = 0;
-  const result = [];
-
-  while (i < roundCount) {
-    const question = getIncompleteProgression();
-    const correctAnswer = getHiddenValue(question).toString();
-    result[i] = [question, correctAnswer];
-    i += 1;
-  }
-  return result;
+const getQuestionAndAnswer = () => {
+  const question = getIncompleteProgression();
+  const correctAnswer = getHiddenValue(question).toString();
+  return [question, correctAnswer];
 };
-
-const questionsAndAnswers = getQuestionsAndAnswers();
 
 const challenge = 'What number is missing in the progression?';
 
-export { questionsAndAnswers, challenge };
+export default () => startGame(getQuestionAndAnswer, challenge);

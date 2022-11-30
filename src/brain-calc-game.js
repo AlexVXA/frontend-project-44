@@ -1,5 +1,6 @@
 import getRandomNumber from './helpers/get-random.js';
 import getCalc from './helpers/get-calc.js';
+import startGame from './game-engine.js';
 
 const operators = ['-', '+', '*'];
 
@@ -19,23 +20,12 @@ const getRandomExpression = () => {
   return randomExpression.toString();
 };
 
-const roundCount = 3;
-
-const getQuestionsAndAnswers = () => {
-  let i = 0;
-  const result = [];
-
-  while (i < roundCount) {
-    const question = getRandomExpression();
-    const correctAnswer = getCalc(question).toString();
-    result[i] = [question, correctAnswer];
-    i += 1;
-  }
-  return result;
+const getQuestionAndAnswer = () => {
+  const question = getRandomExpression();
+  const correctAnswer = getCalc(question).toString();
+  return [question, correctAnswer];
 };
-
-const questionsAndAnswers = getQuestionsAndAnswers();
 
 const challenge = 'What is the result of the expression?';
 
-export { questionsAndAnswers, challenge };
+export default () => startGame(getQuestionAndAnswer, challenge);
