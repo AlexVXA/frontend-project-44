@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import startGame from '../src/game-engine.js';
-import { questionsAndAnswers, challenge } from '../src/brain-progression.js';
+import startGame from '../src/brain-progression.js';
 
-startGame(questionsAndAnswers, challenge);
+startGame();
