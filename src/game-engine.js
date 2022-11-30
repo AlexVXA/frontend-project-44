@@ -1,19 +1,17 @@
-/* eslint-disable no-restricted-syntax */
 import readlineSync from 'readline-sync';
 import getUsernameAndSayHello from './cli.js';
 
-const startGame = (questionsAndAnswers, challenge) => {
-  let i = questionsAndAnswers.length;
+const startGame = (getQuestionAndAnswer, challenge) => {
   const userName = getUsernameAndSayHello();
   console.log(challenge);
-  for (const questionAndAnswer of questionsAndAnswers) {
+  for (let i = 3; i > 0; i -= 1) {
+    const questionAndAnswer = getQuestionAndAnswer();
     const [question, correctAnswer] = questionAndAnswer;
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
       console.log('Correct!');
-      i -= 1;
-      if (i === 0) {
+      if (i === 1) {
         console.log(`Congratulations, ${userName}!`);
       }
     } else {
