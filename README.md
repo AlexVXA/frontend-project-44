@@ -9,7 +9,13 @@
 
 #### Minimum requirements:
 
-If you have a brain, you good to go! :sunglasses:
+If you have a brain and your computer can load google page less than a half hour, you good to go! :sunglasses:
+
+**Min specs**:
+
+> **Node.js v18.12.0.**
+
+> **Windows 10 with WSL** or **macOS 10.15+** or **any current linux distributive**.
 
 #### Installing instructions:
 
