@@ -1,8 +1,8 @@
 import readlineSync from 'readline-sync';
-import getUsernameAndSayHello from './cli.js';
 
 const startGame = (getQuestionAndAnswer, challenge) => {
-  const userName = getUsernameAndSayHello();
+  const userName = readlineSync.question('May I have your name?: ');
+  console.log(`Hello, ${userName}!`);
   console.log(challenge);
   for (let i = 3; i > 0; i -= 1) {
     const questionAndAnswer = getQuestionAndAnswer();
