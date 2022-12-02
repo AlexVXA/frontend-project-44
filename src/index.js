@@ -5,8 +5,7 @@ const startGame = (getQuestionAndAnswer, challenge) => {
   console.log(`Hello, ${userName}!`);
   console.log(challenge);
   for (let i = 3; i > 0; i -= 1) {
-    const questionAndAnswer = getQuestionAndAnswer();
-    const [question, correctAnswer] = questionAndAnswer;
+    const [question, correctAnswer] = getQuestionAndAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
     if (userAnswer === correctAnswer) {
