@@ -1,5 +1,5 @@
-import getRandomNumber from './helpers/get-random.js';
-import startGame from './game-engine.js';
+import getRandomNumber from '../helpers/get-random.js';
+import startGame from '../game-engine.js';
 
 const getPair = () => {
   const firstValue = getRandomNumber(0, 100);

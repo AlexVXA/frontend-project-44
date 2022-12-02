@@ -1,6 +1,5 @@
-import getRandomNumber from './helpers/get-random.js';
-import getCalc from './helpers/get-calc.js';
-import startGame from './game-engine.js';
+import getRandomNumber from '../helpers/get-random.js';
+import startGame from '../game-engine.js';
 
 const operators = ['-', '+', '*'];
 
@@ -18,6 +17,23 @@ const getRandomExpression = () => {
   )} ${secondOperand}`;
 
   return randomExpression.toString();
+};
+
+const getCalc = (str) => {
+  const [firstValue, operator, secondValue] = str.split(' ');
+  const a = Number(firstValue);
+  const b = Number(secondValue);
+
+  switch (operator) {
+    case '-':
+      return a - b;
+    case '+':
+      return a + b;
+    case '*':
+      return a * b;
+    default:
+      return 'invalid expression';
+  }
 };
 
 const getQuestionAndAnswer = () => {
