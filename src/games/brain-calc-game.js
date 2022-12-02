@@ -32,7 +32,7 @@ const getCalc = (str) => {
     case '*':
       return a * b;
     default:
-      return 'invalid expression';
+      throw new Error('invalid expression');
   }
 };
 
