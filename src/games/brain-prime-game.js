@@ -1,5 +1,5 @@
 import getRandomNumber from '../helpers/get-random.js';
-import starGame from '../game-engine.js';
+import starGame from '../index.js';
 
 const isPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {

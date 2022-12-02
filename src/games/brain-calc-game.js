@@ -1,5 +1,5 @@
 import getRandomNumber from '../helpers/get-random.js';
-import startGame from '../game-engine.js';
+import startGame from '../index.js';
 
 const operators = ['-', '+', '*'];
 
