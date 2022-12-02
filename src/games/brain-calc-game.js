@@ -12,9 +12,8 @@ const getRandomOperator = (arr) => {
 const getRandomExpression = () => {
   const firstOperand = getRandomNumber(1, 100);
   const secondOperand = getRandomNumber(1, 100);
-  const randomExpression = `${firstOperand} ${getRandomOperator(
-    operators,
-  )} ${secondOperand}`;
+  const operator = getRandomOperator(operators);
+  const randomExpression = `${firstOperand} ${operator} ${secondOperand}`;
 
   return randomExpression.toString();
 };
