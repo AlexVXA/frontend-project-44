@@ -15,7 +15,7 @@ const getRandomExpression = () => {
   const operator = getRandomOperator(operators);
   const randomExpression = `${firstOperand} ${operator} ${secondOperand}`;
 
-  return randomExpression.toString();
+  return randomExpression;
 };
 
 const getCalc = (str) => {
