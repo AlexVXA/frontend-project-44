@@ -1,6 +1,7 @@
 import getRandomNumber from '../helpers/get-random.js';
-import isEven from '../helpers/is-even.js';
 import startGame from '../game-engine.js';
+
+const isEven = (number) => (number % 2 === 0 ? 'yes' : 'no');
 
 const getQuestionAndAnswer = () => {
   const question = getRandomNumber(1, 100);
