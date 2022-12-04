@@ -18,7 +18,7 @@ const startGame = (getQuestionAndAnswer, challenge) => {
       );
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  return console.log(`Congratulations, ${userName}!`);
 };
 
 export default startGame;
