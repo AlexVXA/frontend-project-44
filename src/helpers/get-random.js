@@ -5,4 +5,4 @@ const getRandomNumber = (min, max) => {
   return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 };
 
-export default getRandomNumber;
+export default () => getRandomNumber(1, 100); // return random number from 1 to 100
