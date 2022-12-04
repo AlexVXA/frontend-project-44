@@ -1,12 +1,7 @@
 import getRandomNumber from '../helpers/get-random.js';
 import startGame from '../index.js';
 
-const getPair = () => {
-  const firstValue = getRandomNumber(0, 100);
-  const secondValue = getRandomNumber(0, 100);
-
-  return `${firstValue} ${secondValue}`;
-};
+const getPair = () => `${getRandomNumber()} ${getRandomNumber()}`;
 
 const getGCD = (x, y) => {
   if (y === 0) return x;
