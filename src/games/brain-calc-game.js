@@ -1,19 +1,17 @@
+import getRandomFromRangeOf from '../helpers/get-random-from-range.js';
 import getRandomNumber from '../helpers/get-random.js';
 import startGame from '../index.js';
 
 const operators = ['-', '+', '*'];
 
 const getRandomOperator = (arr) => {
-  const initialIndex = 0;
   const lastIndex = arr.length - 1;
-  return arr[getRandomNumber(initialIndex, lastIndex)];
+  return arr[getRandomFromRangeOf(0, lastIndex)];
 };
 
 const getRandomExpression = () => {
-  const firstOperand = getRandomNumber(1, 100);
-  const secondOperand = getRandomNumber(1, 100);
   const operator = getRandomOperator(operators);
-  const randomExpression = `${firstOperand} ${operator} ${secondOperand}`;
+  const randomExpression = `${getRandomNumber()} ${operator} ${getRandomNumber()}`;
 
   return randomExpression;
 };
