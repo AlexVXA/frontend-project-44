@@ -2,26 +2,30 @@ import getRandomNumber from '../helpers/get-random.js';
 import getRandomFromRangeOf from '../helpers/get-random-from-range.js';
 import startGame from '../index.js';
 
+const minProgLength = 5; // minimal length of the progression
+const maxProgLength = 10; // maximum length of the progression
+const minProgStep = 2; // minimal step of the progression
+const maxProgStep = 5; // maximum step of the progression
+
 const challenge = 'What number is missing in the progression?';
 
-const getLength = () => getRandomFromRangeOf(5, 10); // https://disk.yandex.ru/i/-cwbT1etAjGkug
-const getProgStep = () => getRandomFromRangeOf(2, 5); // progr step are chosen randomly from 2 to 5
-
-const getProgression = (length, step, number) => {
+const getProgression = () => {
+  const progLength = getRandomFromRangeOf(minProgLength, maxProgLength);
+  const progStep = getRandomFromRangeOf(minProgStep, maxProgStep);
   const result = [];
-  for (let i = number; result.length < length; i += step) {
+  for (let i = getRandomNumber(); result.length < progLength; i += progStep) {
     result.push(i);
   }
   return result;
 };
 
 const getQuestionAndAnswer = () => {
-  const progression = getProgression(getLength(), getProgStep(), getRandomNumber());
+  const progression = getProgression();
   const hiddenValueIndex = getRandomFromRangeOf(0, progression.length - 1);
-  const answer = progression[hiddenValueIndex].toString();
+  const correctAnswer = progression[hiddenValueIndex].toString();
   progression[hiddenValueIndex] = '..';
   const question = progression.join(' ');
-  return [question, answer];
+  return [question, correctAnswer];
 };
 
 export default () => startGame(getQuestionAndAnswer, challenge);
