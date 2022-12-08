@@ -10,15 +10,15 @@ const startGame = (getQuestionAndAnswer, challenge) => {
     const [question, correctAnswer] = getQuestionAndAnswer();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    if (userAnswer === correctAnswer) {
-      console.log('Correct!');
-    } else {
-      return console.log(
+    if (userAnswer !== correctAnswer) {
+      console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.\nLet's try again, ${userName}!`,
       );
+      return;
     }
+    console.log('Correct!');
   }
-  return console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export default startGame;
