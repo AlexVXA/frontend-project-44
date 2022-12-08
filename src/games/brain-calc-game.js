@@ -4,23 +4,7 @@ import startGame from '../index.js';
 
 const operators = ['-', '+', '*'];
 
-const getRandomOperator = (arr) => {
-  const lastIndex = arr.length - 1;
-  return arr[getRandomFromRangeOf(0, lastIndex)];
-};
-
-const getRandomExpression = () => {
-  const operator = getRandomOperator(operators);
-  const randomExpression = `${getRandomNumber()} ${operator} ${getRandomNumber()}`;
-
-  return randomExpression;
-};
-
-const getCalc = (str) => {
-  const [firstValue, operator, secondValue] = str.split(' ');
-  const a = Number(firstValue);
-  const b = Number(secondValue);
-
+const getCalc = (a, b, operator) => {
   switch (operator) {
     case '-':
       return a - b;
@@ -34,8 +18,11 @@ const getCalc = (str) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const question = getRandomExpression();
-  const correctAnswer = getCalc(question).toString();
+  const firstValue = getRandomNumber();
+  const secondVavue = getRandomNumber();
+  const operator = operators[getRandomFromRangeOf(0, operators.length - 1)];
+  const question = `${firstValue} ${operator} ${secondVavue}`;
+  const correctAnswer = getCalc(firstValue, secondVavue, operator).toString();
   return [question, correctAnswer];
 };
 
