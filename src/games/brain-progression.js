@@ -2,6 +2,8 @@ import getRandomNumber from '../helpers/get-random.js';
 import getRandomFromRangeOf from '../helpers/get-random-from-range.js';
 import startGame from '../index.js';
 
+const challenge = 'What number is missing in the progression?';
+
 const getLength = () => getRandomFromRangeOf(5, 10); // https://disk.yandex.ru/i/-cwbT1etAjGkug
 const getProgStep = () => getRandomFromRangeOf(2, 5); // progr step are chosen randomly from 2 to 5
 
@@ -21,7 +23,5 @@ const getQuestionAndAnswer = () => {
   const question = progression.join(' ');
   return [question, answer];
 };
-
-const challenge = 'What number is missing in the progression?';
 
 export default () => startGame(getQuestionAndAnswer, challenge);

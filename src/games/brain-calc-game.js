@@ -3,6 +3,7 @@ import getRandomNumber from '../helpers/get-random.js';
 import startGame from '../index.js';
 
 const operators = ['-', '+', '*'];
+const challenge = 'What is the result of the expression?';
 
 const getCalc = (a, b, operator) => {
   switch (operator) {
@@ -25,7 +26,5 @@ const getQuestionAndAnswer = () => {
   const correctAnswer = getCalc(firstValue, secondVavue, operator).toString();
   return [question, correctAnswer];
 };
-
-const challenge = 'What is the result of the expression?';
 
 export default () => startGame(getQuestionAndAnswer, challenge);

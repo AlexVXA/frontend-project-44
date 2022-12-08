@@ -1,6 +1,8 @@
 import getRandomNumber from '../helpers/get-random.js';
 import startGame from '../index.js';
 
+const challenge = 'Find the greatest common divisor of given numbers.';
+
 const getPair = () => `${getRandomNumber()} ${getRandomNumber()}`;
 
 const getGCD = (x, y) => {
@@ -20,7 +22,5 @@ const getQuestionAndAnswer = () => {
   const correctAnswer = getGCDfromQuestion(question);
   return [question, correctAnswer];
 };
-
-const challenge = 'Find the greatest common divisor of given numbers.';
 
 export default () => startGame(getQuestionAndAnswer, challenge);
