@@ -2,7 +2,7 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": " Brain Games is a set of five console games. [![Actions Status](https://github.com/AlexVXA/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/AlexVXA/frontend-project-44/actions)",
+  "description": "Brain Games is a set of five console games.",
   "main": "brain-games.js",
   "bin": {
     "brain-games": "bin/brain-games.js",
