@@ -7,9 +7,6 @@ const maxProgLength = 10; // maximum length of the progression
 const minProgStep = 2; // minimal step of the progression
 const maxProgStep = 5; // maximum step of the progression
 
-const progLength = () => getRandomFromRangeOf(minProgLength, maxProgLength);
-const progStep = () => getRandomFromRangeOf(minProgStep, maxProgStep);
-
 const challenge = 'What number is missing in the progression?';
 
 const getProgression = (length, step) => {
@@ -21,7 +18,9 @@ const getProgression = (length, step) => {
 };
 
 const getQuestionAndAnswer = () => {
-  const progression = getProgression(progLength(), progStep());
+  const progLength = getRandomFromRangeOf(minProgLength, maxProgLength);
+  const progStep = getRandomFromRangeOf(minProgStep, maxProgStep);
+  const progression = getProgression(progLength, progStep);
   const hiddenValueIndex = getRandomFromRangeOf(0, progression.length - 1);
   const correctAnswer = progression[hiddenValueIndex].toString();
   progression[hiddenValueIndex] = '..';
